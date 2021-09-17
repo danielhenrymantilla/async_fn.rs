@@ -1,0 +1,29 @@
+[package]
+name = "async_fn"
+authors = [
+    "Daniel Henry-Mantilla <daniel.henry.mantilla@gmail.com>"
+]
+version = "0.0.1-rc1"  # Keep in sync
+edition = "2018"
+
+license = "Zlib OR MIT OR Apache-2.0"
+description = "Collection of helper annotations and macros for concise and yet explicit `async fn` signatures"
+repository = "https://github.com/danielhenrymantilla/async_fn.rs"
+documentation = "https://docs.rs/async_fn"
+readme = "README.md"
+keywords = ["async", "signature", "future", "trait", "bounds"]
+
+[dependencies.async_fn-proc_macros]
+path = "src/proc_macros"
+version = "0.0.1-rc1"  # Keep in sync
+
+[features]
+better-docs = []  # allowed to break MSRV
+
+[package.metadata.docs.rs]
+all-features = true
+
+[workspace]
+members = [
+    "src/proc_macros",
+]
