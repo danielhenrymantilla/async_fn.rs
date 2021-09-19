@@ -12,8 +12,8 @@ https://gist.github.com/danielhenrymantilla/8e5b721b3929084562f8f65668920c33)
 https://github.com/rust-secure-code/safety-dance/)
 [![License](https://img.shields.io/crates/l/async_fn.svg)](
 https://github.com/danielhenrymantilla/async_fn.rs/blob/master/LICENSE-ZLIB)
-<!--[![CI](https://github.com/danielhenrymantilla/async_fn.rs/workflows/CI/badge.svg)](
-https://github.com/danielhenrymantilla/async_fn.rs/actions)-->
+[![CI](https://github.com/danielhenrymantilla/async_fn.rs/workflows/CI/badge.svg)](
+https://github.com/danielhenrymantilla/async_fn.rs/actions)
 
 Collection of helper annotations and macros for concise and yet explicit
 `async fn` signatures.

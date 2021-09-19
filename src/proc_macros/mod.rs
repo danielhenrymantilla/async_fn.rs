@@ -158,7 +158,8 @@ fn bare_future_impl (
         async_token: async_,
         capture: Some(token::Move { span: fun.sig.fn_token.span }),
         block: Block {
-            brace_token: token::Brace { span: async_.span },
+            // brace_token: token::Brace { span: async_.span },
+            brace_token: fun.block.brace_token,
             stmts: ::core::mem::take(&mut fun.block.stmts),
         },
     })));
