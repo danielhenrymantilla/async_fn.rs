@@ -3,7 +3,7 @@ name = "async_fn"
 authors = [
     "Daniel Henry-Mantilla <daniel.henry.mantilla@gmail.com>"
 ]
-version = "0.0.1"  # Keep in sync
+version = "0.0.2-rc1"  # Keep in sync
 edition = "2018"
 
 license = "Zlib OR MIT OR Apache-2.0"
@@ -13,17 +13,17 @@ documentation = "https://docs.rs/async_fn"
 readme = "README.md"
 keywords = ["async", "signature", "future", "trait", "bounds"]
 
-[dependencies.async_fn-proc_macros]
-path = "src/proc_macros"
-version = "0.0.1"  # Keep in sync
-
 [features]
 better-docs = []  # allowed to break MSRV
 
-[package.metadata.docs.rs]
-all-features = true
+[dependencies.async_fn-proc_macros]
+path = "src/proc_macros"
+version = "0.0.2-rc1"  # Keep in sync
 
 [workspace]
 members = [
     "src/proc_macros",
 ]
+
+[package.metadata.docs.rs]
+all-features = true

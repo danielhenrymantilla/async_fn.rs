@@ -1,3 +1,4 @@
+//! Crate not intended for direct use.
 #![allow(nonstandard_style, unused_imports)]
 
 use ::core::{

@@ -1,6 +1,8 @@
 #![cfg_attr(feature = "better-docs",
     cfg_attr(all(), doc = include_str!("../README.md")),
 )]
+#![no_std]
+#![forbid(unsafe_code)]
 
 /// One of the main macros of the crate.
 ///

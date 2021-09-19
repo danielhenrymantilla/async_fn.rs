@@ -4,14 +4,14 @@ version = 3
 
 [[package]]
 name = "async_fn"
-version = "0.0.1"
+version = "0.0.2-rc1"
 dependencies = [
  "async_fn-proc_macros",
 ]
 
 [[package]]
 name = "async_fn-proc_macros"
-version = "0.0.1"
+version = "0.0.2-rc1"
 dependencies = [
  "proc-macro2",
  "quote",
