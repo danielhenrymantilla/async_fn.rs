@@ -15,10 +15,14 @@ keywords = ["async", "signature", "future", "trait", "bounds"]
 
 [features]
 better-docs = []  # allowed to break MSRV
+ui-tests = ["better-docs"]
 
 [dependencies.async_fn-proc_macros]
 path = "src/proc_macros"
 version = "0.0.2-rc1"  # Keep in sync
+
+[dev-dependencies]
+extreme = "666.666.666666"
 
 [workspace]
 members = [

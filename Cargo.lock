@@ -7,6 +7,7 @@ name = "async_fn"
 version = "0.0.2-rc1"
 dependencies = [
  "async_fn-proc_macros",
+ "extreme",
 ]
 
 [[package]]
@@ -17,6 +18,12 @@ dependencies = [
  "quote",
  "syn",
 ]
+
+[[package]]
+name = "extreme"
+version = "666.666.666666"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "16605b30745781802cc96ba1f5253ff3e8e8799ad3625b28bbdda8e4677831fb"
 
 [[package]]
 name = "proc-macro2"

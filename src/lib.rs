@@ -282,3 +282,8 @@ mod __ {
         pub use crate::before_async;
     }
 }
+
+#[cfg_attr(feature = "ui-tests",
+    cfg_attr(all(), doc = include_str!("compile_fail_tests.md")),
+)]
+mod _compile_fail_tests {}
