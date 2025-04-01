@@ -6,7 +6,7 @@ https://github.com/danielhenrymantilla/async_fn.rs)
 https://crates.io/crates/async_fn)
 [![Documentation](https://docs.rs/async_fn/badge.svg)](
 https://docs.rs/async_fn)
-[![MSRV](https://img.shields.io/badge/MSRV-1.42.0-white)](
+[![MSRV](https://img.shields.io/badge/MSRV-1.77.0-white)](
 https://gist.github.com/danielhenrymantilla/8e5b721b3929084562f8f65668920c33)
 [![unsafe forbidden](https://img.shields.io/badge/unsafe-forbidden-success.svg)](
 https://github.com/rust-secure-code/safety-dance/)
