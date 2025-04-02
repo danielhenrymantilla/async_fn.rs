@@ -21,8 +21,9 @@ use ::async_fn::prelude::*;
 fn fun ()
   -> impl Fut<'static, ()> + Send
 {
-    let _not_send = 0 as *const ();
-    let _await_point = async {}.await;
+    let not_send = 0 as *const ();
+    let _await_point = async {}.await
+    drop(not_send);
 }
 ```
 
