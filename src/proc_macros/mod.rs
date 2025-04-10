@@ -66,7 +66,7 @@ fn bare_future_impl (
 ) -> Result<TokenStream2>
 {
     let _: parse::Nothing = parse2(attrs)?;
-    let mut fun: ImplItemMethod = parse2(input)?;
+    let mut fun: ImplItemFn = parse2(input)?;
     let sig = &mut fun.sig;
 
     // Ensure the fun is an `async fn`.
@@ -103,13 +103,21 @@ fn bare_future_impl (
             ..
         ]
         | [
-            Stmt::Semi(
+            Stmt::Expr(
                 Expr::Macro(ExprMacro {
                     ref attrs,
                     ref mut mac,
                 }),
-                _,
+                Some(_),
             ),
+            ..
+        ] 
+        | [
+            Stmt::Macro(StmtMacro { 
+                ref attrs, 
+                ref mut mac, 
+                semi_token: _,
+            }),
             ..
         ]
         if mac.path.is_ident("before_async")
@@ -153,16 +161,19 @@ fn bare_future_impl (
     };
 
     // Wrap the body in an `async move`
-    stmts.push(Stmt::Expr(Expr::Async(ExprAsync {
-        attrs: vec![],
-        async_token: async_,
-        capture: Some(token::Move { span: fun.sig.fn_token.span }),
-        block: Block {
-            // brace_token: token::Brace { span: async_.span },
-            brace_token: fun.block.brace_token,
-            stmts: ::core::mem::take(&mut fun.block.stmts),
-        },
-    })));
+    stmts.push(Stmt::Expr(
+        Expr::Async(ExprAsync {
+            attrs: vec![],
+            async_token: async_,
+            capture: Some(token::Move { span: fun.sig.fn_token.span }),
+            block: Block {
+                // brace_token: token::Brace { span: async_.span },
+                brace_token: fun.block.brace_token,
+                stmts: ::core::mem::take(&mut fun.block.stmts),
+            },
+        }), 
+        None)
+    );
     fun.block.stmts = stmts;
     Ok(fun.into_token_stream())
 }
